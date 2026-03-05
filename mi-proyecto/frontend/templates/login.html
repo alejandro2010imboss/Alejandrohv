@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Foro LaCobra - Login</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-container">
+  <h1>FORO - LaCobra</h1>
+  <p class="subtitle">INICIA SESION PARA ENTRAR AL FORO</p>
+
+  <form method="POST" action="/">
+      <input type="text" name="username" placeholder="Usuario" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+  </form>
+
+  {% if error %}
+  <p style="color:rgb(47, 0, 255)">{{ error }}</p>
+  {% endif %}
+
+  <p class="switch">¿AUN NO TIENES CUENTA? <a href="/register">Crear cuenta</a></p>
+</div>
+
+</body>
+</html>

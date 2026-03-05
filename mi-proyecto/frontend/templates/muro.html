@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Foro DevTalk</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <h2>DevTalk Forum</h2>
+  <a class="logout" href="/logout">Cerrar sesión</a>
+</header>
+
+<main class="container">
+
+  <section class="post-box">
+    <h3>Publicar mensaje</h3>
+    <form method="POST" action="/wall">
+      <textarea name="mensaje" placeholder="Comparte algo con la comunidad..." required></textarea>
+      <button type="submit">Publicar</button>
+    </form>
+  </section>
+
+  <section class="messages">
+    <h3>Mensajes recientes</h3>
+    {% for mensaje in mensajes %}
+    <div class="message-card">
+      <div class="message-header">
+        <strong>{{ mensaje.autor }}</strong>
+        <span>{{ mensaje.fecha }}</span>
+      </div>
+      <p>{{ mensaje.texto }}</p>
+    </div>
+    {% endfor %}
+  </section>
+
+</main>
+
+</body>
+</html>

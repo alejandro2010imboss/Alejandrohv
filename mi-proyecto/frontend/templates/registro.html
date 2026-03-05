@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Foro DevTalk - Registro</title>
+<link rel="stylesheet" href="../static/style.css">
+</head>
+<body class="auth-body">
+
+<div class="auth-container">
+  <h1>Crear cuenta</h1>
+  <p class="subtitle">Únete a la comunidad</p>
+
+  <form method="POST" action="/register">
+      <input type="text" name="username" placeholder="Usuario" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Contraseña" required>
+      <button type="submit">Registrarse</button>
+  </form>
+
+  {% if error %}
+  <p style="color:red">{{ error }}</p>
+  {% endif %}
+
+  <p class="switch">¿Ya tienes cuenta? <a href="/">Iniciar sesión</a></p>
+</div>
+
+</body>
+</html>
